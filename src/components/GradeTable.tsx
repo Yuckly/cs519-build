@@ -48,6 +48,7 @@ export const GradeTable = ({
   classTitleId,
   classAssignments,
 }: TestProps) => {
+  const assignmentNumbers = classAssignments.length;
   const classTitle = classTitleId[0];
   const classId = classTitleId[1];
   const rows = studentDetails.map((student, index) => {
@@ -75,7 +76,7 @@ export const GradeTable = ({
           }
         });
 
-        weightedGrade /= 100;
+        weightedGrade /= length;
         return {
           id: uuidv4(),
           studentID: studentId,
